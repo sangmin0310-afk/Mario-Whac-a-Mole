@@ -1,0 +1,174 @@
+/* 전체적인 바디 스타일 설정 */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: url("./mario-bg.jpg");
+    background-size: cover;
+}
+
+/* 시작 화면 스타일 */
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background: url("./Super-Mario.jpg");
+    background-size: cover;
+    padding-top: 8vh;
+    box-sizing: border-box;
+}
+
+/* 시작 화면의 제목 스타일 */
+#start-screen h1 {
+    color: white;
+    text-shadow: 1px 1px 0 #000,
+                 2px 2px 0 #000,
+                 3px 3px 0 #000,
+                 4px 4px 0 #000,
+                 5px 5px 0 #000,
+                 6px 6px 0 #000,
+                 7px 7px 0 #000,
+                 8px 8px 0 #000,
+                 9px 9px 0 #000,
+                 10px 10px 0 #000;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 1;
+}
+
+/* 시작 버튼 스타일 */
+#start-button {
+    color: white;
+    text-shadow: 1px 1px 0 #000,
+                 2px 2px 0 #000,
+                 3px 3px 0 #000,
+                 4px 4px 0 #000,
+                 5px 5px 0 #000,
+                 6px 6px 0 #000,
+                 7px 7px 0 #000,
+                 8px 8px 0 #000,
+                 9px 9px 0 #000,
+                 10px 10px 0 #000;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 1;
+    background: url("./random.png") no-repeat center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    padding: 20px 40px;
+    transition: transform 0.2s;
+}
+
+/* 마우스 호버 시 애니메이션 */
+#start-button:hover{
+    transform: translateY(-10px);
+}
+
+/* 게임 화면 스타일 */
+#game-screen {
+    text-align: center;
+}
+
+#game-screen h1{
+    color: white;
+    text-shadow: 1px 1px 0 #000,
+                 2px 2px 0 #000,
+                 3px 3px 0 #000,
+                 4px 4px 0 #000,
+                 5px 5px 0 #000,
+                 6px 6px 0 #000,
+                 7px 7px 0 #000,
+                 8px 8px 0 #000,
+                 9px 9px 0 #000,
+                 10px 10px 0 #000;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1;
+}
+
+#score{
+    color: white;
+    text-shadow: 
+            -1px -1px 0 #000,
+             1px -1px 0 #000,
+            -1px  1px 0 #000,
+             1px  1px 0 #000;  
+}
+
+/* 게임 보드 스타일 */
+#board {
+    width: 540px;
+    height: 540px;
+    background: url("./soil.png");
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 각 타일 스타일 */
+#board div {
+    width: 180px;
+    height: 180px;
+    background-image: url("./pipe.png");
+    background-size: cover;
+}
+
+/* 이미지 스타일 */
+#board div img {
+    width: 100px;
+    height: 100px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* 2일차 CSS */
+/* 점수와 목숨을 포함하는 컨테이너 스타일 */
+#score-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* 점수와 목숨 사이의 간격 */
+    margin-bottom: 5px;
+}
+
+/* 목숨 컨테이너 스타일 */
+#lives-container {
+    display: flex;
+    align-items: center;
+}
+
+/* 목숨 아이콘 스타일 */
+#lives-container img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+}
+
+/* 3일차 CSS */
+/* 점수와 목숨을 포함하는 컨테이너 스타일 */
+#score-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 5px;
+}
+
+/* 타이머 스타일 */
+#timer{
+    color: white;
+    text-shadow: 
+            -1px -1px 0 #000,
+             1px -1px 0 #000,
+            -1px  1px 0 #000,
+             1px  1px 0 #000;
+    font-size: 1.5em;
+}

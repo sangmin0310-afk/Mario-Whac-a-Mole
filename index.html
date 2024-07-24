@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>마리오 두더지 잡기 게임</title>
+    <link rel="stylesheet" href="mole.css">
+    <script src="mole.js" defer></script>
+</head>
+<body>
+    <!-- 시작 화면 -->
+    <div id="start-screen">
+        <h1>Mario Whac-a-Mole</h1>
+        <button id="start-button">Start</button>
+    </div>
+    <!-- 게임 화면 -->
+    <div id="game-screen" style="display: none;">
+        <h1>Mario Whac-a-Mole</h1>
+        <div id="score-container">
+            <!-- 목숨 2일차 -->
+            <div id="lives-container"></div>
+            <h2 id="score">0</h2>
+            <!-- 타이머 3일차 -->
+            <h2 id="timer">60</h2>
+        </div>
+        <div id="board"></div>
+    </div>
+</body>
+</html>
