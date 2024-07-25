@@ -11,18 +11,45 @@ let timer; // 타이머 변수 (3일차)
 
 window.onload = function() {
     document.getElementById("start-button").addEventListener("click", startGame);
+    document.getElementById("instructions-button").addEventListener("click", showInstructions);
+    document.getElementById("exit-button").addEventListener("click", exitGame);
+    document.getElementById("back-button").addEventListener("click", goBackToStart);
 }
 
 // 게임 시작 함수
 function startGame() {
     document.getElementById("start-screen").style.display = "none";
+    document.getElementById("instructions-screen").style.display = "none";
     setTimeout(() => {
         document.getElementById("game-screen").style.display = "block";
-        initLives(); // 목숨 초기화(2일차)
+        initLives();
         setGame();
-        startTimer(); // 타이머 시작(3일차)
+        startTimer();
     }, 300);
 }
+
+// 게임 설명 화면 표시 함수(4일차)
+function showInstructions() {
+    document.getElementById("start-screen").style.display = "none";
+    document.getElementById("game-screen").style.display = "none";
+    document.getElementById("instructions-screen").style.display = "block";
+}
+
+// 게임 종료 함수(4일차)
+function exitGame() {
+    if (confirm("게임을 종료하시겠습니까?")) {
+        window.close(); // 브라우저에서 직접 창을 닫는 기능이 작동하지 않을 수 있습니다.
+        // 혹은 사용자에게 페이지를 새로 고침 하거나 다른 페이지로 이동하도록 유도할 수 있습니다.
+    }
+}
+
+// 설명 화면에서 시작 화면으로 돌아가는 함수(4일차)
+function goBackToStart() {
+    document.getElementById("instructions-screen").style.display = "none";
+    document.getElementById("start-screen").style.display = "block";
+    document.getElementById("game-screen").style.display = "none";
+}
+
 
 // 타이머 시작 함수 (3일차)
 function startTimer() {
@@ -164,6 +191,13 @@ function selectTile() {
     } else if (this == currGoldenMushroomTile) {
         score += 50;
         document.getElementById("score").innerHTML = score.toString();
+        
+        // 황금버섯 클릭 시 목숨 회복(4일차)
+        if (lives < 3) {
+            lives += 1;
+            updateLives();
+        }
+        
         currGoldenMushroomTile.innerHTML = "";
         currGoldenMushroomTile = null;
     }
